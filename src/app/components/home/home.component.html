@@ -1,0 +1,31 @@
+<div class="wrapper">
+    <div class="data">
+        <div class="records">
+            <h2>Infected</h2>
+            <p>new {{newCase }}</p>
+           <p>Total {{ cases}}</p> 
+        </div>
+        <div class="records">
+            <h2>Deaths</h2>
+            <p>new {{newDeaths }}</p>
+           <p>Total {{deaths }}</p> 
+        </div>
+        <div class="records">
+            <h2>Recovered</h2>
+            <p>Recovered {{recovered}}</p> 
+        </div>
+    </div>
+
+    <div class="dropdown">
+        <select (change)="selectCountry($event)">
+            <option value="all">Worldwide</option>
+            <option value={{country}} *ngFor="let country of countries">{{country}}</option>
+        </select>
+    </div>
+</div>
+<div class="map-graph-container">
+    <app-chart></app-chart>
+    <app-map></app-map>
+</div>
+
+
